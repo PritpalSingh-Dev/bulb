@@ -5,5 +5,10 @@
   <%= @company.name %>
 </p>
 
+<h2>Employees</h2>
+<% @company.users.each do |user| %>
+  <%= user.try(:email) %>
+<% end %>
+
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>
