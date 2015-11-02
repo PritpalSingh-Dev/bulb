@@ -14,17 +14,36 @@
 
   <body>
   <header>
-    <nav>
-      <ul>
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Ideas", ideas_path %></li>
-        <li><%= link_to "Propose a New Idea", new_idea_path %></li>
-        <li><%= link_to "Register", new_user_registration_path %></li>
-        <li><%= link_to "My Profile", current_user %></li>
-        <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-        <li><%= link_to "Login", new_user_session_path %></li>
-        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="#">bulb</a></h1>
+        </li>
+         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
       </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li><%= link_to "About Us", root_path, class:"active" %></li>
+          <li><%= link_to "Ideas", ideas_path, class:"active" %></li>
+          <li><%= link_to "Propose a New Idea", new_idea_path, class:"active" %></li>
+          <li><%= link_to "Register", new_user_registration_path, class:"active" %></li>
+          <li><%= link_to "My Profile", current_user, class:"active" %></li>
+          <li><%= link_to "Edit Profile", edit_user_registration_path, class:"active" %></li>
+          <li><%= link_to "Login", new_user_session_path, class:"active" %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class:"active" %></li>
+
+          <li class="has-dropdown">
+            <a href="#">Right Button Dropdown</a>
+            <ul class="dropdown">
+              <li><a href="#">First link in dropdown</a></li>
+              <li class="active"><a href="#">Active link in dropdown</a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
     </nav>
   </header>
     <%= yield %>
