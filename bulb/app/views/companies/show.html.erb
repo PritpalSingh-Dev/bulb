@@ -7,8 +7,9 @@
 
 <h2>Employees</h2>
 <% @company.users.each do |user| %>
-  <%= user.try(:email) %>
+<%= user.try(:name) %>
 <% end %>
 
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>
+

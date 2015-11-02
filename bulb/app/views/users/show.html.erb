@@ -1,3 +1,8 @@
-<h1>User Profile Page</h1>
+<h1>My Profile</h1>
 
-<%= @user.email  %>
+<li><strong>Name:</strong><%= @user.name  %></li>
+<li><strong>Username:</strong><%= @user.username  %></li>
+<li><strong>Email:</strong><%= @user.email  %></li>
+<li><strong>Company:</strong><%= @user.company.name  %></li>
+<li><strong>Department:</strong><%= @user.department  %></li>
+<li><strong>Position:</strong><%= @user.position  %></li>
