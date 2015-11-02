@@ -1,33 +1,33 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Bulb</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<header>
-  <nav>
-    <ul>
-      <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "Ideas", ideas_path %></li>
-      <li><%= link_to "Propose a New Idea", new_idea_path %></li>
-      <li><%= link_to "Register", new_user_registration_path %></li>
-      <li><%= link_to "My Profile", current_user %></li>
-      <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-      <li><%= link_to "Login", new_user_session_path %></li>
-      <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-    </ul>
-  </nav>
-</header>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<% flash.each do |name, message| %>
-  <div class="flash-message flash-message-<%= name %>">
-    <%= message %>
-  </div>
-<% end %>
-<%= yield %>
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
-</body>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+  <header>
+    <nav>
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Ideas", ideas_path %></li>
+        <li><%= link_to "Propose a New Idea", new_idea_path %></li>
+        <li><%= link_to "Register", new_user_registration_path %></li>
+        <li><%= link_to "My Profile", current_user %></li>
+        <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+        <li><%= link_to "Login", new_user_session_path %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+      </ul>
+    </nav>
+  </header>
+    <%= yield %>
+
+  </body>
 </html>
