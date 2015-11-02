@@ -10,6 +10,7 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <link href='https://fonts.googleapis.com/css?family=Chivo' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
@@ -27,12 +28,13 @@
         <!-- Right Nav Section -->
         <ul class="right">
           <li><%= link_to "About Us", about_path, class:"active" %></li>
-          <li><%= link_to "Ideas", ideas_path, class:"active" %></li>
-          
           <li><%= link_to "Register", new_user_registration_path, class:"active" %></li>
+          <% if current_user %>
+           <li><%= link_to "Ideas", ideas_path, class:"active" %></li>
           <li><%= link_to "My Profile", current_user, class:"active" %></li>
           <li><%= link_to "Edit Profile", edit_user_registration_path, class:"active" %></li>
-          <% if current_user %>
+
+
           <li><%= link_to "Propose a New Idea", new_idea_path, class:"active" %></li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class:"active" %></li>
           <% else %>

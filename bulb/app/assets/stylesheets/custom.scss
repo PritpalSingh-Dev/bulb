@@ -1,6 +1,10 @@
 // nav {
 //   background: yellow;
 // }
+html {
+  font-family: 'Chivo', sans-serif;
+}
+
 
 #hpimg {
   width: 40em;
@@ -9,10 +13,12 @@
 }
 
 #hptxtbx {
+  margin-top: 250px;
   background: yellow;
-  background-position: 0 auto;
-  font-size: 40px;
+  border-radius: 25px;
+  font-size: 30px;
+  text-align: center;
   width: 600px;
-  height: 300px;
-  float: right;
+  height: 150px;
+  float: left;
 }
