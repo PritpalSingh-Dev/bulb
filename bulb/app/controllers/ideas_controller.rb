@@ -59,6 +59,7 @@ class IdeasController < ApplicationController
 
   # DELETE /ideas/1
   # DELETE /ideas/1.json
+  before_filter :require_authorization, only: [:delete]
   def destroy
     @idea.destroy
     respond_to do |format|
@@ -71,6 +72,10 @@ class IdeasController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_idea
       @idea = Idea.find(params[:id])
+    end
+
+    def require_authorization
+    redirect_to :ideas unless current_user.ideas.find_by_idea_id(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
