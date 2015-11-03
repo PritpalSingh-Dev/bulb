@@ -23,8 +23,18 @@ html {
   float: left;
 }
 
-.field {
-border: 2px solid #2D7D9C;
+section {
+outline: 2px solid #2D7D9C;
 width: 60%;
 margin: 0 auto;
+}
+
+.field {
+ outline: 2px solid #2D7D9C;
+ width: 60%;
+ margin: 0 auto; 
+}
+
+.actions {
+  margin: 0 auto;
 }

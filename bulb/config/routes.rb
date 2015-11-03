@@ -16,4 +16,5 @@ get '/about', to: 'home#about'
   resources :users, only: [:index, :show]
   resources :comments, only: [:create, :destroy, :show]
   
+
 end

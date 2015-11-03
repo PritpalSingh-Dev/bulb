@@ -1,4 +1,4 @@
-<h1> Propose a new idea </h1>
+<h1><strong><%= current_user.name %></strong> proposes a new idea</h1>
 
 <%= form_for(@idea) do |f| %>
   <% if @idea.errors.any? %>
@@ -13,13 +13,10 @@
     </div>
   <% end %>
 
+<section>
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
   </div>
   <div class="field">
     <%= f.label :blurb %><br>
@@ -45,3 +42,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+</section>

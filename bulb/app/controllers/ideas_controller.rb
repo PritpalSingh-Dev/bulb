@@ -59,7 +59,6 @@ class IdeasController < ApplicationController
 
   # DELETE /ideas/1
   # DELETE /ideas/1.json
-  before_filter :require_authorization, only: [:delete]
   def destroy
     @idea.destroy
     respond_to do |format|
@@ -74,12 +73,11 @@ class IdeasController < ApplicationController
       @idea = Idea.find(params[:id])
     end
 
-    def require_authorization
-    redirect_to :ideas unless current_user.ideas.find_by_idea_id(params[:id])
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def idea_params
       params.require(:idea).permit(:title, :user_id, :blurb, :reason, :goal, :implementation, :budget)
     end
+end
+ 
+
 end
