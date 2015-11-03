@@ -1,5 +1,5 @@
 class IdeasController < ApplicationController
-  before_action :set_idea, only: [:show, :edit, :update, :destroy]
+  before_action :set_idea, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   # GET /ideas
   # GET /ideas.json
@@ -21,16 +21,16 @@ class IdeasController < ApplicationController
   def edit
   end
 
+  def upvote 
+    @idea.upvote_by current_user
+    redirect_to :back
+  end  
+
   # POST /ideas
   # POST /ideas.json
   def create
     @idea = current_user.ideas.new(idea_params)
     # @idea = Idea.new(idea_params)
-
-    #Comment on ideas
-    def show
-        @comments = @idea.comments
-      end
 
     respond_to do |format|
       if @idea.save
@@ -77,7 +77,5 @@ class IdeasController < ApplicationController
     def idea_params
       params.require(:idea).permit(:title, :user_id, :blurb, :reason, :goal, :implementation, :budget)
     end
-end
- 
+  end
 
-end

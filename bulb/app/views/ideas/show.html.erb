@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<button>Vote</button>
+<%= link_to like_idea_path(@idea), method: :put do %>
+  Vote | 
+  <%= @idea.get_upvotes.size %>
+<% end %>
 
 <p>
   <strong>Title:</strong>
@@ -20,9 +23,7 @@
   <%= @idea.blurb %>
 </p>
 
-<% @idea.each do |idea| %>
-  <%= link_to "upvote", like_idea_path(link), method: :put %>
-  <% end %>
+
 
 <p>
   <strong>Reason:</strong>
@@ -45,7 +46,7 @@
 </p>
 
 <%= render partial: 'comments/form', locals: { commentable: @idea } %>
-<%= render partial: 'comments/comment', collection: @comments, locals: { commentable: @idea } %>
+<%= render partial: 'comments/comment', collection: @idea.comments, locals: { commentable: @idea } %>
 
 <%= link_to 'Edit', edit_idea_path(@idea) %> 
 <%= link_to 'Back', ideas_path %>
