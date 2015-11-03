@@ -41,6 +41,9 @@
 </p>
 
 <%= render partial: 'comments/form', locals: { commentable: @idea } %>
+<%= render partial: 'comments/comment', collection: @comments, locals: { commentable: @idea } %>
 
-<%= link_to 'Edit', edit_idea_path(@idea) %> |
+<% if @idea.user.name %>
+<%= link_to 'Edit', edit_idea_path(@idea) %> 
+<% end %>
 <%= link_to 'Back', ideas_path %>

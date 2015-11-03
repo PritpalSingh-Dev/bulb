@@ -14,6 +14,6 @@ get '/about', to: 'home#about'
   resources :companies
   devise_for :users
   resources :users, only: [:index, :show]
-  resources :comments, only: [:create, :destroy]
+  resources :comments, only: [:create, :destroy, :show]
   
 end

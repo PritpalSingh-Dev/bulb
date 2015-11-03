@@ -27,6 +27,11 @@ class IdeasController < ApplicationController
     @idea = current_user.ideas.new(idea_params)
     # @idea = Idea.new(idea_params)
 
+    #Comment on ideas
+    def show
+        @comments = @idea.comments
+      end
+
     respond_to do |format|
       if @idea.save
         format.html { redirect_to @idea, notice: 'Idea was successfully created.' }

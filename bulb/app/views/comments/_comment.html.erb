@@ -1,7 +1,8 @@
-<%= form_for(:comment, url: comments_path(commentable_type: commentable.class.to_s.underscore, commentable_id: commentable.id)) do |f| %>
-
-  <%= f.text_area :title, placeholder: "Add a title" %>
-  <%= f.text_area :comment, placeholder: "Write a Comment" %>
-  <%= f.submit "Comment!" %>
-
-<% end %>
+<li>
+  <ul>
+    <li><%= comment.user.try(:name) %></li>
+    <li><%= comment.title %></li>
+    <li><%= comment.comment %></li>
+    <li><%= link_to 'Delete Comment', comment_path(comment, commentable_type: commentable.class.to_s.underscore, commentable_id: commentable.id), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  </ul>
+</li> 
