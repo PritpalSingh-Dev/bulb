@@ -31,21 +31,19 @@
           <li><%= link_to "Register", new_user_registration_path, class:"active" %></li>
           <% if current_user %>
            <li><%= link_to "Ideas", ideas_path, class:"active" %></li>
-          <li><%= link_to "My Profile", current_user, class:"active" %></li>
-          <li><%= link_to "Edit Profile", edit_user_registration_path, class:"active" %></li>
           <li><%= link_to "Propose a New Idea", new_idea_path, class:"active" %></li>
-          <li><%= link_to "My Company", companies_path, class:"active"%></li> 
-          <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class:"active" %></li>
+      <li class="has-dropdown">
+            <a href="#"><%= current_user.name %></a>
+            <ul class="dropdown">
+            <li><%= link_to "My Profile", current_user, class:"active" %></li>
+              <li><%= link_to "Edit Profile", edit_user_registration_path, class:"active" %></li>
+              <li><%= link_to "My Company", companies_path, class:"active"%></li> 
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class:"active" %></li>
           <% else %>
           <li><%= link_to "Login", new_user_session_path, class:"active" %></li>
           <% end %>
           
-
-          <li class="has-dropdown">
-            <a href="#">Right Button Dropdown</a>
-            <ul class="dropdown">
-              <li><a href="#">First link in dropdown</a></li>
-              <li class="active"><a href="#">Active link in dropdown</a></li>
+          
             </ul>
           </li>
         </ul>
