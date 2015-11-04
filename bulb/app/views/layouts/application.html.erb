@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
-    <link href='https://fonts.googleapis.com/css?family=Chivo' rel='stylesheet' type='text/css'>
-  </head>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+</head>
 
-  <body>
+<body>
   <header>
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
-        <li class="name">
-          <h1><a href="#">bulb</a></h1>
-        </li>
-         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+          <li><img id="logo" src="<%= asset_path( 'bulb-white.png' ) %>">
+          <h1><a><%= link_to "bulb", root_path %></a></h1><li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
       </ul>
 
@@ -28,29 +27,34 @@
         <!-- Right Nav Section -->
         <ul class="right">
           <li><%= link_to "About Us", about_path, class:"active" %></li>
-          <li><%= link_to "Register", new_user_registration_path, class:"active" %></li>
           <% if current_user %>
-           <li><%= link_to "Ideas", ideas_path, class:"active" %></li>
+          <li><%= link_to "Ideas", ideas_path, class:"active" %></li>
           <li><%= link_to "Propose a New Idea", new_idea_path, class:"active" %></li>
-      <li class="has-dropdown">
+          <li class="has-dropdown">
             <a href="#"><%= current_user.name %></a>
             <ul class="dropdown">
-            <li><%= link_to "My Profile", current_user, class:"active" %></li>
+              <li><%= link_to "My Profile", current_user, class:"active" %></li>
               <li><%= link_to "Edit Profile", edit_user_registration_path, class:"active" %></li>
-              <li><%= link_to "My Company", companies_path, class:"active"%></li> 
+              <li><%= link_to "My Company", users_path, class:"active"%></li> 
               <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class:"active" %></li>
-          <% else %>
-          <li><%= link_to "Login", new_user_session_path, class:"active" %></li>
-          <% end %>
-          
-          
+              <% else %>
+              <li><%= link_to "Register", new_user_registration_path, class:"active" %></li>
+              <li><%= link_to "Login", new_user_session_path, class:"active" %></li>
+              <% end %>
             </ul>
           </li>
         </ul>
       </section>
     </nav>
   </header>
-    <%= yield %>
 
-  </body>
+  <% flash.each do |name, message| %>
+    <div class="flash-message flash-message-<%= name %>">
+      <%= message %>
+    </div>
+  <% end %>
+
+  <%= yield %>
+
+</body>
 </html>

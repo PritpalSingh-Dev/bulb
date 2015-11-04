@@ -1,6 +1,8 @@
-<h1>All Users</h1>
+<h1>Everyone at <%= link_to current_user.company.try(:name) %></h1>
 
 <% @users.each do |user| %>
-  <%= user.email  %>
+<% if current_user.company.id == user.company.try(:id) %>
+  <%= user.name %>
   <%= user.company.try(:name)  %>
+  <% end %>
 <% end %>
