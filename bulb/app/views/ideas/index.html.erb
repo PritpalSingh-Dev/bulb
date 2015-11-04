@@ -23,10 +23,6 @@
         <td><%= idea.title %></td>
         <td><%= link_to idea.user.name, idea.user %></td>
         <td><%= idea.blurb %></td>
-        <td><%= idea.reason %></td>
-        <td><%= idea.goal %></td>
-        <td><%= idea.implementation %></td>
-        <td><%= idea.budget %></td>
         <td><%= idea.user.company.try(:name) %></td>
         <td><%= link_to 'Show', idea %></td>
         <td><%= link_to 'Edit', edit_idea_path(idea) %></td>

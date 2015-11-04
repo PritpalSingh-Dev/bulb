@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   acts_as_voter
-  attr_accessible :name , :email
+  
 
     # User::Roles
     # The available roles

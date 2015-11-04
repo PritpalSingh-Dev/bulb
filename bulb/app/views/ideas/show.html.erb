@@ -23,8 +23,6 @@
   <%= @idea.blurb %>
 </p>
 
-
-
 <p>
   <strong>Reason:</strong>
   <%= @idea.reason %>
@@ -43,6 +41,11 @@
 <p>
   <strong>Budget:</strong>
   <%= @idea.budget %>
+</p>
+
+<p>
+  <b>Learn more:</b>
+  <%= @idea.attachment %>
 </p>
 
 <%= render partial: 'comments/form', locals: { commentable: @idea } %>
