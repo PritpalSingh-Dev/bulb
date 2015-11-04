@@ -23,6 +23,7 @@ class IdeasController < ApplicationController
   end
 
   def upvote 
+    authorize! :upvote, Idea
     @idea.upvote_by current_user
     redirect_to :back
   end  

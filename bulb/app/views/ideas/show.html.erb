@@ -48,6 +48,8 @@
   <%=  link_to "Learn More", @idea.attachment.url %>
 </p>
 
+<%= pie_chart @idea.votes_for_pie_chart %>
+
 <%= render partial: 'comments/form', locals: { commentable: @idea } %>
 <%= render partial: 'comments/comment', collection: @idea.comments, locals: { commentable: @idea } %>
 

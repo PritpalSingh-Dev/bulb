@@ -4,18 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "bulb" %></title>
 
+  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "vendor/modernizr" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
   <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
   <header>
-    <nav class="top-bar" data-topbar role="navigation">
+    <nav class="top-bar row" data-topbar role="navigation">
       <ul class="title-area">
           <li><img id="logo" src="<%= asset_path( 'bulb-white.png' ) %>">
           <h1><a><%= link_to "bulb", root_path %></a></h1><li>
@@ -54,7 +56,9 @@
     </div>
   <% end %>
 
-  <%= yield %>
+  <main class="row">
+    <%= yield %>
+  </main>
 
 </body>
 </html>
