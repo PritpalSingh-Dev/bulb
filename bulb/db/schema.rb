@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151104003332) do
+ActiveRecord::Schema.define(version: 20151104185514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,11 +45,19 @@ ActiveRecord::Schema.define(version: 20151104003332) do
     t.text     "goal"
     t.text     "implementation"
     t.float    "budget"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.string   "attachment"
+    t.integer  "cached_votes_total", default: 0
+    t.integer  "cached_votes_score", default: 0
+    t.integer  "cached_votes_up",    default: 0
+    t.integer  "cached_votes_down",  default: 0
   end
 
+  add_index "ideas", ["cached_votes_down"], name: "index_ideas_on_cached_votes_down", using: :btree
+  add_index "ideas", ["cached_votes_score"], name: "index_ideas_on_cached_votes_score", using: :btree
+  add_index "ideas", ["cached_votes_total"], name: "index_ideas_on_cached_votes_total", using: :btree
+  add_index "ideas", ["cached_votes_up"], name: "index_ideas_on_cached_votes_up", using: :btree
   add_index "ideas", ["user_id"], name: "index_ideas_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
@@ -71,6 +79,7 @@ ActiveRecord::Schema.define(version: 20151104003332) do
     t.datetime "updated_at",                          null: false
     t.integer  "company_id"
     t.string   "role"
+    t.string   "image"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

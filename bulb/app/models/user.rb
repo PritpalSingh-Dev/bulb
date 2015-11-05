@@ -7,12 +7,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   acts_as_voter
   
+  mount_uploader :image, UserUploader
 
-    # User::Roles
-    # The available roles
-    Roles = [ :admin , :default ]
+  # User::Roles
+  # The available roles
+  Roles = [ :admin , :default ]
 
-    def is?( requested_role )
-      self.role == requested_role.to_s
-    end
+  def is?( requested_role )
+    self.role == requested_role.to_s
+  end
 end

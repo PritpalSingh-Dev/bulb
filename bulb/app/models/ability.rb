@@ -5,6 +5,9 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.email?
       can [:create], :all
+      can :read, Company do |company|
+        user.company.id == company.id
+      end
       can :read, Idea do |idea|
         idea.user.company.id == user.company.id
       end

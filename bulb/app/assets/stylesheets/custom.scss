@@ -31,22 +31,34 @@ nav h1 {
   margin-left: 20px;
 }
 
-#hpimg {
-  width: 40em;
-  height: 40em;
-  float: left;
+.homepage {
+max-height: 50%; 
+max-width: auto;
+}
+
+#logo2 {
+  margin-top: 10%;
+  max-height: auto;
+  max-width: 25%;
+  float:left;
+  display: inline-block;
 }
 
 #hptxtbx {
-  margin-top: 250px;
-  background: yellow;
-  border-radius: 25px;
-  font-size: 30px;
+  margin-top: 20%;
+  font-size: 2.75vw;
   text-align: center;
-  width: 600px;
-  height: 150px;
+  max-width: 60%;
+  max-height: auto;
   float: left;
+  display: inline-block;
+  color: #35a0ca;
 }
+
+#featuresbox {
+  clear: left;
+}
+
 
 section {
 outline: 2px solid #2D7D9C;

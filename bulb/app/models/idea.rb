@@ -4,6 +4,8 @@ class Idea < ActiveRecord::Base
   acts_as_votable
   mount_uploader :attachment, AttachmentUploader
 
+  scope :top_5, -> { order(:cached_votes_score).reverse.take(5) }
+
   def votes_for_pie_chart
     {
       'no' => number_of_people_in_company - number_of_votes,

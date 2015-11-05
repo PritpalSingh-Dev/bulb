@@ -1,10 +1,11 @@
 <h1>My Profile</h1>
 
-<li><strong>Name:</strong><%= @user.name  %></li>
-<li><strong>Username:</strong><%= @user.username  %></li>
-<li><strong>Email:</strong><%= @user.email  %></li>
-<li><strong>Company:</strong><%= @user.company.name  %></li>
-<li><strong>Department:</strong><%= @user.department  %></li>
-<li><strong>Position:</strong><%= @user.position  %></li>
-<li><strong>Ideas:</strong></li>
-<li><strong>Recent Activity:</strong></li>
+<%= image_tag @user.image %>
+<strong>Name:</strong><%= @user.name  %>
+<strong>Username:</strong><%= @user.username  %>
+<strong>Email:</strong><%= @user.email  %>
+<strong>Company:</strong><%= @user.company.name  %>
+<strong>Department:</strong><%= @user.department  %>
+<strong>Position:</strong><%= @user.position  %>
+<strong>Ideas:</strong>
+<strong>Recent Activity:</strong>

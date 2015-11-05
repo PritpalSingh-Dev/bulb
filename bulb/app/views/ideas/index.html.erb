@@ -1,17 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Ideas at <%= link_to current_user.company.try(:name) %></h1>
+<h1>Top 5 Ideas at <%= link_to current_user.company.try(:name) %></h1>
+
+<div>
+  <%= render @top_5_ideas %>
+</div>
+
+<h1>All ideas at <%= link_to current_user.company.try(:name) %></h1>
 
 <div> 
-<% @ideas.each do |idea| %>
-  <ul>
-    <% if current_user.company.id == idea.user.company.try(:id) %>
-    <li><%= link_to idea.title, idea %></li>
-    <li>By <%= link_to idea.user.name, idea.user %></li>
-    <li><%= idea.user.company.try(:name) %></li>
-    <% end %>
-  </ul>
-<% end %>
+  <%= render @ideas %>
 </div>
 
 
