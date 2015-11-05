@@ -3,7 +3,9 @@
 <h1>Everyone at <%= link_to current_user.company.try(:name) %></h1>
 <% @users.each do |user| %>
 <% if current_user.company.id == user.company.try(:id) %>
-<p class ="myCompanyField">  <%= user.name %>, <%= user.position  %></p>
+<p class ="myCompanyField">  <%= link_to user.name, user.name %>, <%= user.position  %></p>
   <% end %>
 <% end %>
 </section>
+
+
