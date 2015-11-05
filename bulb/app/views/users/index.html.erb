@@ -1,8 +1,9 @@
-<h1>Everyone at <%= link_to current_user.company.try(:name) %></h1>
+<section id="myCompany">
 
+<h1>Everyone at <%= link_to current_user.company.try(:name) %></h1>
 <% @users.each do |user| %>
 <% if current_user.company.id == user.company.try(:id) %>
-  <%= user.name %>
-  <%= user.company.try(:name)  %>
+<p class ="myCompanyField">  <%= user.name %>, <%= user.position  %></p>
   <% end %>
 <% end %>
+</section>

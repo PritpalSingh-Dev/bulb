@@ -1,11 +1,13 @@
+<section id="myProfile">
+
 <h1>My Profile</h1>
 
-<%= image_tag @user.image %>
-<strong>Name:</strong><%= @user.name  %>
-<strong>Username:</strong><%= @user.username  %>
-<strong>Email:</strong><%= @user.email  %>
-<strong>Company:</strong><%= @user.company.name  %>
-<strong>Department:</strong><%= @user.department  %>
-<strong>Position:</strong><%= @user.position  %>
-<strong>Ideas:</strong>
-<strong>Recent Activity:</strong>
+<%= image_tag @user.image, class: "myProfileImg" %>
+<p class="myProfileField"><strong>Name:</strong><%= @user.name  %></p>
+<p class="myProfileField"><strong>Username:</strong><%= @user.username  %></p>
+<p class="myProfileField"><strong>Email:</strong><%= @user.email  %></p>
+<p class="myProfileField"><strong>Company:</strong><%= @user.company.name  %></p>
+<p class="myProfileField"><strong>Department:</strong><%= @user.department  %></p>
+<p class="myProfileField"><strong>Position:</strong><%= @user.position  %></p>
+
+</section>

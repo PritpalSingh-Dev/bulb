@@ -20,7 +20,10 @@
   <%= @idea.blurb %>
 </p>
 
+<div id="pieStyle">
+<p id="pieStyletxt">Support for <%= @idea.title %></p>
 <%= pie_chart @idea.votes_for_pie_chart %>
+</div>
 
 <p class="fieldsShowHTMLIdeas">
   <strong>Reason:</strong>
@@ -56,4 +59,3 @@
 <%= link_to 'Edit', edit_idea_path(@idea) %> 
 <%= link_to 'Delete', @idea, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
-<%= link_to 'Back', ideas_path %>

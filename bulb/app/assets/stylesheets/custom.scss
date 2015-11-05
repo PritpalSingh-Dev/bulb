@@ -108,7 +108,7 @@ display: inline
 }
 
 button {
-  background: #35a0ca;
+  background: #FFD800;
   width: 100%;
 }
 
@@ -124,7 +124,7 @@ text-align: center;
 
 .fieldsShowHTMLIdeas {
   font-size: 2vw;
-  margin-left: 20%
+  margin-left: 10%;
 }
 
 .showIdeas ul li {
@@ -139,4 +139,48 @@ input[type=submit] {
   width: 60%;
   display: block;
   margin: 20px auto;
+}
+
+#pieStyle {
+  outline: 2px solid #35a0ca;
+  background: #35a0ca;
+}
+
+#pieStyletxt {
+  outline: 2px solid #35a0ca;
+  text-align: center;
+  background: #35a0ca;
+  font-size: 3vw;
+  color: white;
+}
+
+#myProfile {
+  width: 60%;
+  margin: 0 auto;
+  outline: 2px solid #35a0ca;
+  padding: 20px;
+}
+
+.myProfileField {
+  font-size: 1.5vw;
+}
+
+.myProfileImg {
+  width: 300px;
+  margin-left: 30%;
+}
+
+.cancelFunc {
+  text-align: center;
+}
+
+#myCompany {
+  width: 60%;
+  margin: 0 auto;
+  outline: 2px solid #35a0ca;
+  padding: 20px;
+}
+
+.myCompanyField {
+  font-size: 1.5vw;
 }
