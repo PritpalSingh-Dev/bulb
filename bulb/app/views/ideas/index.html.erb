@@ -3,14 +3,15 @@
 <h1>Top 5 Ideas at <%= link_to current_user.company.try(:name) %></h1>
 
 <div>
-  <%= render @top_5_ideas %>
+  <ul class="small-block-grid-5 showIdeas">
+    <%= render @top_5_ideas %>
+  </ul>
 </div>
 
 <h1>All ideas at <%= link_to current_user.company.try(:name) %></h1>
 
-<div> 
-  <%= render @ideas %>
+<div>
+  <ul class="small-block-grid-5 showIdeas">
+    <%= render @ideas %>
+  </ul>
 </div>
-
-
-<%= link_to 'Propose a new idea', new_idea_path %>

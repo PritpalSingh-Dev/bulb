@@ -1,4 +1,4 @@
-<h1><strong><%= current_user.name %></strong> proposes a new idea</h1>
+<h1><%= current_user.name %> proposes a new idea</h1>
 
 <%= form_for(@idea) do |f| %>
   <% if @idea.errors.any? %>
@@ -44,7 +44,7 @@
    </div>
 
   <div class="actions">
-    <%= f.submit class: "button expand" %>
+    <%= f.submit class: "button" %>
   </div>
 <% end %>
 </section>

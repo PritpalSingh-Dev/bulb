@@ -6,44 +6,43 @@
   <%= @idea.get_upvotes.size %></button>
 <% end %>
 
-<p>
-  <strong>Title:</strong>
+<p id="titleShowHTMLIdeas">
   <%= @idea.title %>
 </p>
 
-<p>
-  <strong>By:</strong>
+<p id="nameShowHTMLIdeas">
+  <strong>By </strong>
   <%= @idea.user.name %>
 </p>
 
-<p>
+<p class="fieldsShowHTMLIdeas">
   <strong>Blurb:</strong>
   <%= @idea.blurb %>
 </p>
 
 <%= pie_chart @idea.votes_for_pie_chart %>
 
-<p>
+<p class="fieldsShowHTMLIdeas">
   <strong>Reason:</strong>
   <%= @idea.reason %>
 </p>
 
-<p>
+<p class="fieldsShowHTMLIdeas">
   <strong>Goal:</strong>
   <%= @idea.goal %>
 </p>
 
-<p>
+<p class="fieldsShowHTMLIdeas">
   <strong>Implementation:</strong>
   <%= @idea.implementation %>
 </p>
 
-<p>
+<p class="fieldsShowHTMLIdeas">
   <strong>Budget:</strong>
   <%= @idea.budget %>
 </p>
 
-<p>
+<p class="fieldsShowHTMLIdeas">
   <b>Learn more:</b>
   <%=  link_to "Learn More", @idea.attachment.url %>
 </p>
