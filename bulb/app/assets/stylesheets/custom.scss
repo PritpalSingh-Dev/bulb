@@ -57,15 +57,16 @@ h3 {
 }
 
 section {
-outline: 2px solid #2D7D9C;
-width: 60%;
+outline: 2px solid #FFD800;
+width: 50%;
 margin: 0 auto;
 }
 
 .field {
- outline: 2px solid #2D7D9C;
+ outline: 2px solid #FFD800;
  width: 60%;
  margin: 0 auto; 
+ background: #FFD800;
 }
 
 .actions {
@@ -80,3 +81,19 @@ footer {
 .footerimg {
   width: 5%;
 }
+
+.showIdeas {
+display: inline
+}
+
+.showHTMLIdeas {
+  margin: 0 auto;
+  outline: 2px solid #35a0ca;
+  width: 80%; 
+}
+
+button {
+  background: #35a0ca;
+  margin: 0 auto;
+}
+

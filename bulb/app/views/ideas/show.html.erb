@@ -1,16 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<div class="showHTMLIdeas">
 <%= link_to like_idea_path(@idea), method: :put do %>
-  Vote | 
-  <%= @idea.get_upvotes.size %>
+  <button>Vote |  
+  <%= @idea.get_upvotes.size %></button>
 <% end %>
 
 <p>
   <strong>Title:</strong>
   <%= @idea.title %>
-</p>
-<p><strong>Company:</strong>
-<%= @idea.user.company.try(:name) %>
 </p>
 
 <p>
@@ -22,6 +20,8 @@
   <strong>Blurb:</strong>
   <%= @idea.blurb %>
 </p>
+
+<%= pie_chart @idea.votes_for_pie_chart %>
 
 <p>
   <strong>Reason:</strong>
@@ -48,7 +48,7 @@
   <%=  link_to "Learn More", @idea.attachment.url %>
 </p>
 
-<%= pie_chart @idea.votes_for_pie_chart %>
+<div>
 
 <%= render partial: 'comments/form', locals: { commentable: @idea } %>
 <%= render partial: 'comments/comment', collection: @idea.comments, locals: { commentable: @idea } %>

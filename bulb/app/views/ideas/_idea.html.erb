@@ -1,11 +1,10 @@
-<ul>
+<ul class="small-block-grid-5 showIdeas">
   <% if current_user.company.id == idea.user.company.try(:id) %>
   <li><%= link_to idea.user do %>
+  <br>
     <%= image_tag idea.user.try(:image_url) %>
     <% end %>
-  </li>
-  <li><%= link_to idea.title, idea %></li>
-  <li>By <%= link_to idea.user.name, idea.user %></li>
-  <li><%= idea.user.company.try(:name) %></li>
+  <%= link_to idea.title, idea %>
+  By <%= link_to idea.user.name, idea.user %></li>
   <% end %>
 </ul>

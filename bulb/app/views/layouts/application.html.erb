@@ -28,7 +28,6 @@
       <section class="top-bar-section">
         <!-- Right Nav Section -->
         <ul class="right">
-          <li><%= link_to "About Us", about_path, class:"active" %></li>
           <% if current_user %>
           <li><%= link_to "Ideas", ideas_path, class:"active" %></li>
           <li><%= link_to "Propose a New Idea", new_idea_path, class:"active" %></li>

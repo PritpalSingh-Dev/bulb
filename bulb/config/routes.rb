@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/about', to: 'home#about'
+  #get '/about', to: 'home#about'
   
   resources :ideas  do 
     member do
