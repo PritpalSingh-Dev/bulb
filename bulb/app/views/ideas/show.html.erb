@@ -1,10 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <div class="showHTMLIdeas">
-<%= link_to like_idea_path(@idea), method: :put do %>
-  <button>Vote |  
-  <%= @idea.get_upvotes.size %></button>
-<% end %>
 
 <p id="titleShowHTMLIdeas">
   <%= @idea.title %>
@@ -22,7 +18,11 @@
 
 <div id="pieStyle">
 <p id="pieStyletxt">Support for <%= @idea.title %></p>
-<%= pie_chart @idea.votes_for_pie_chart %>
+<%= pie_chart @idea.votes_for_pie_chart, class: "float" %>
+<%= link_to like_idea_path(@idea), method: :put do %>
+  <button>Vote |  
+  <%= @idea.get_upvotes.size %></button>
+<% end %>
 </div>
 
 <p class="fieldsShowHTMLIdeas">

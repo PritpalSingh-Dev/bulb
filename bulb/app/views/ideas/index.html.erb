@@ -2,8 +2,8 @@
 
 <h1>Top 5 Ideas at <%= link_to current_user.company.try(:name) %></h1>
 
-<div>
-  <ul class="small-block-grid-5 showIdeas">
+<div class="top5Grid">
+  <ul class="small-block-grid-5 showIdeas1">
     <%= render @top_5_ideas %>
   </ul>
 </div>
@@ -11,7 +11,7 @@
 <h1>All ideas at <%= link_to current_user.company.try(:name) %></h1>
 
 <div>
-  <ul class="small-block-grid-5 showIdeas">
+  <ul class="small-block-grid-5 showIdeas2">
     <%= render @ideas %>
   </ul>
 </div>

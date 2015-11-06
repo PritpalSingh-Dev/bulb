@@ -62,7 +62,7 @@ nav h1 a:hover {
 }
 
 .featuresImg {
-  width: 50%;
+  width: 25%;
 }
 
 section {
@@ -81,11 +81,17 @@ margin: 0 auto;
   margin: 0 auto;
 }
 
+#aboutTxt {
+  width: 75%;
+  margin: 0 auto;
+  padding: 25px;
+}
+
 footer {
   color: white;
   text-align: center;
   background: #35a0ca;
-  padding: 10px;
+  padding: 20px;
 }
 
 footer h3 {
@@ -98,7 +104,7 @@ footer h3 {
 }
 
 .showIdeas {
-display: inline
+  display: inline
 }
 
 .showHTMLIdeas {
@@ -107,10 +113,7 @@ display: inline
   width: 80%; 
 }
 
-button {
-  background: #FFD800;
-  width: 100%;
-}
+
 
 #titleShowHTMLIdeas {
 font-size: 4vw;
@@ -127,7 +130,16 @@ text-align: center;
   margin-left: 10%;
 }
 
-.showIdeas ul li {
+.top5Grid {
+background: #FFD800;
+padding: 20px;
+}
+
+.showIdeas1 ul li {
+  list-style: none;
+}
+
+.showIdeas2 ul li {
   list-style: none;
 }
 
@@ -141,8 +153,22 @@ input[type=submit] {
   margin: 20px auto;
 }
 
+button {
+  background: #35a0ca;
+  width: 100%;
+  font-size: 3vw;
+  padding: 20px;
+}
+
+button a:hover {
+  background: #FFD800;
+}
+
+.float {
+ float: left;
+}
+
 #pieStyle {
-  outline: 2px solid #35a0ca;
   background: #35a0ca;
 }
 
