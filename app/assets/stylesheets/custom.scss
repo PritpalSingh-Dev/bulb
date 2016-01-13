@@ -10,6 +10,10 @@ header {
   outline: 0;
 }
 
+p#notice {
+    padding: 20px;
+}
+
 nav h1 {
   display: inline-block;
   font-size: 26px;
@@ -126,13 +130,14 @@ footer h3 {
   margin: 0 auto;
   outline: 2px solid #35a0ca;
   width: 80%; 
+  margin-bottom: 60px;
+  margin-top: 60px;
 }
-
-
 
 #titleShowHTMLIdeas {
 font-size: 4vw;
 text-align: center;
+background: #FFDA00;
 }
 
 #nameShowHTMLIdeas {
@@ -150,16 +155,32 @@ background: #FFD800;
 padding: 20px;
 }
 
+[class*="block-grid-"] {
+    display: block;
+    padding: 0;
+    margin: auto;
+}
+
 .showIdeas1 ul li {
   list-style: none;
+  margin: auto 0;
 }
 
 .showIdeas2 ul li {
   list-style: none;
+  margin: auto 0;
 }
 
 h1 {
   text-align: center;
+  margin: auto;
+  padding-top: 3px;
+}
+
+h2 {
+  text-align: center;
+  margin: auto;
+  padding-top: 3px;
 }
 
 input[type=submit] {
@@ -171,8 +192,8 @@ input[type=submit] {
 button {
   background: #35a0ca;
   width: 100%;
-  font-size: 3vw;
-  padding: 20px;
+  font-size: 3.5vw;
+  margin: 0px;
 }
 
 button a:hover {
@@ -225,3 +246,54 @@ button a:hover {
 .myCompanyField {
   font-size: 1.5vw;
 }
+
+button:hover {
+    background: #FFD700;
+}
+
+li {
+  margin: inherit;
+}
+
+ul li a {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+ul li ul {
+    border: 2px solid #35a0ca;
+    padding: 20px;
+}
+
+ul strong {
+    padding: 15px;
+}
+
+
+p.fieldsShowHTMLIdeas {
+    padding-top: 10px;
+}
+
+textarea#comment_comment {
+    border: 2px solid #008CBA;
+    padding: 10px;
+    box-shadow: none;
+    width: 80%;
+    margin: auto;
+    height: 100px;
+}
+
+input.button.expand {
+    width: 80%;
+}
+
+input.button.expand:hover{
+  background: #FFD700;
+}
+
+  .marginCommentsBox {
+      margin: auto;
+      /* overflow: scroll; */
+      width: 80%;
+      background: aliceblue;
+  }
